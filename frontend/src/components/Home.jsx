@@ -18,7 +18,8 @@ const Home = () => {
       const response = await axios.get(`https://backend-bounceinsights-codingchallenge.onrender.com/api/countries/${country}`);
       setCountryInfo(response.data[0]);
     } catch (error) {
-      setError('Failed to fetch country data');
+      const message = error.response?.data?.message || 'Failed to fetch country data';
+      setError(message);
       setCountryInfo(null);
       console.error(error); 
     } finally {
