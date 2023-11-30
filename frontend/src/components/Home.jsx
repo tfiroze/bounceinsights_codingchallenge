@@ -16,7 +16,8 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await axios.get(`https://backend-bounceinsights-codingchallenge.onrender.com/api/countries/${country}`);
-      setCountryInfo(response.data);
+      console.log(response.data)
+      setCountryInfo(response.data[0]);
     } catch (error) {
       setError('Failed to fetch country data');
       setCountryInfo(null);
@@ -51,21 +52,21 @@ const Home = () => {
       {countryInfo && (
         <div className="mt-8 bg-white text-gray-800 rounded-xl shadow-lg max-w-2xl w-full overflow-hidden">
     <div className="p-5">
-      <h2 className="text-3xl font-bold mb-2 text-gray-800">{countryInfo.name.common}</h2>
+      <h2 className="text-3xl font-bold mb-2 text-gray-800">{countryInfo?.name?.common}</h2>
       <div className="text-gray-700">
-        <p className="mb-1"><strong>Official Name:</strong> {countryInfo.name.official}</p>
-        <p className="mb-1"><strong>Capital:</strong> {countryInfo.capital}</p>
-        <p className="mb-1"><strong>Region:</strong> {countryInfo.region}</p>
-        <p className="mb-1"><strong>Subregion:</strong> {countryInfo.subregion}</p>
-        <p className="mb-1"><strong>Languages:</strong> {Object.values(countryInfo.languages).join(', ')}</p>
-        <p className="mb-1"><strong>Currencies:</strong> {Object.entries(countryInfo.currencies).map(([code, { name, symbol }]) => `${name} (${symbol})`).join(', ')}</p>
-        <p className="mb-1"><strong>Population:</strong> {countryInfo.population.toLocaleString()}</p>
-        <p className="mb-1"><strong>Timezones:</strong> {countryInfo.timezones.join(', ')}</p>
-        <p className="mb-1"><strong>Continents:</strong> {countryInfo.continents.join(', ')}</p>
+        <p className="mb-1"><strong>Official Name:</strong> {countryInfo?.name?.official}</p>
+        <p className="mb-1"><strong>Capital:</strong> {countryInfo?.capital}</p>
+        <p className="mb-1"><strong>Region:</strong> {countryInfo?.region}</p>
+        <p className="mb-1"><strong>Subregion:</strong> {countryInfo?.subregion}</p>
+        {/* <p className="mb-1"><strong>Languages:</strong> {Object.values(countryInfo?.languages).join(', ')}</p>
+        <p className="mb-1"><strong>Currencies:</strong> {Object.entries(countryInfo?.currencies).map(([code, { name, symbol }]) => `${name} (${symbol})`).join(', ')}</p> */}
+        <p className="mb-1"><strong>Population:</strong> {countryInfo?.population?.toLocaleString()}</p>
+        <p className="mb-1"><strong>Timezones:</strong> {countryInfo?.timezones?.join(', ')}</p>
+        <p className="mb-1"><strong>Continents:</strong> {countryInfo?.continents?.join(', ')}</p>
       </div>
     </div>
     <div className="p-5 border-t border-gray-200">
-      <img src={countryInfo.flags.png} alt={`Flag of ${countryInfo.name.common}`} className="mx-auto h-20"/>
+      <img src={countryInfo?.flags?.png} alt={`Flag of ${countryInfo?.name?.common}`} className="mx-auto h-20"/>
     </div>
   </div>
     )}
