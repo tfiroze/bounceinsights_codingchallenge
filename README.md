@@ -12,6 +12,7 @@ Before you begin, ensure you have installed the latest version of [Node.js and n
 
 The application consists of two parts: the backend server and the frontend UI.
 
+
 ### Backend
 
 1. Navigate to the `backend` directory:
@@ -41,5 +42,17 @@ The application consists of two parts: the backend server and the frontend UI.
     ```bash
     npm start
     ```
+### Backend Testing
+
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+    ```
+2. Run the `tests`:
+    ```bash
+    npm test
+    ```
+
+
 
 The application is now available on `localhost:3000`
