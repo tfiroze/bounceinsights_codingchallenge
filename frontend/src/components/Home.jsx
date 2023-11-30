@@ -58,8 +58,8 @@ const Home = () => {
         <p className="mb-1"><strong>Capital:</strong> {countryInfo?.capital}</p>
         <p className="mb-1"><strong>Region:</strong> {countryInfo?.region}</p>
         <p className="mb-1"><strong>Subregion:</strong> {countryInfo?.subregion}</p>
-        {/* <p className="mb-1"><strong>Languages:</strong> {Object.values(countryInfo?.languages).join(', ')}</p>
-        <p className="mb-1"><strong>Currencies:</strong> {Object.entries(countryInfo?.currencies).map(([code, { name, symbol }]) => `${name} (${symbol})`).join(', ')}</p> */}
+        <p className="mb-1"><strong>Languages:</strong> {Object.values(countryInfo?.languages).join(', ')}</p>
+        <p className="mb-1"><strong>Currencies:</strong> {Object.entries(countryInfo?.currencies).map(([code, { name, symbol }]) => `${name} (${symbol})`).join(', ')}</p>
         <p className="mb-1"><strong>Population:</strong> {countryInfo?.population?.toLocaleString()}</p>
         <p className="mb-1"><strong>Timezones:</strong> {countryInfo?.timezones?.join(', ')}</p>
         <p className="mb-1"><strong>Continents:</strong> {countryInfo?.continents?.join(', ')}</p>
