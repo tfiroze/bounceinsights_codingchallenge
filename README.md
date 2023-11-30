@@ -1,6 +1,6 @@
 # Bounce Insights Coding Challenge Submission
 
-Hi there! This is my submission for the BounceInsights Coding Challenge. I've used React for the frontend, and Node.js with Express for the backend, all styled with Tailwind CSS.
+Hi there! My name is Tehsein, this is my submission for the BounceInsights Coding Challenge. I've used React for the frontend, and Node.js with Express for the backend, all styled with Tailwind CSS.
 
 For more information about me and my work, please visit [my website](https://tehseinfiroze.com/).
 
