@@ -1,7 +1,5 @@
-// In your backend/test/countryApi.test.js
-
 const supertest = require('supertest');
-const app = require('../server'); // Path to your app file
+const app = require('../server');
 
 describe('GET /api/countries/:name', () => {
   it('should fetch country data', async () => {
@@ -10,11 +8,9 @@ describe('GET /api/countries/:name', () => {
       .get(`/api/countries/${countryName}`)
       .expect(200)
       .then((response) => {
-        // Check type and length of the countries array
         expect(Array.isArray(response.body)).toBeTruthy();
         expect(response.body.length).toBeGreaterThan(0);
 
-        // Check data structure of the response
         const country = response.body[0];
         expect(country).toHaveProperty('name');
         expect(country).toHaveProperty('capital');
